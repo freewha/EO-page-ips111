@@ -49,8 +49,8 @@ class IPScanner:
         async with semaphore:
             try:
                 response = await self.client.get(
-                    f"http://{ip}/",
-                    headers={'Host': 'picb.cc.98272.qzz.io'}
+                    f"https://{ip}/",
+                    headers={'Host': 'i.ibb.co.98272.qzz.io'}
                 )
                 
                 # Check if it's a 302 redirect with matching Location header
