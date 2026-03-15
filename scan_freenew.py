@@ -50,7 +50,7 @@ class IPScanner:
             try:
                 response = await self.client.get(
                     f"http://{ip}/",
-                    headers={'Host': 'chi.nz.eu.org'}
+                    headers={'Host': 'picb.cc.98272.qzz.io'}
                 )
                 
                 # Check if it's a 302 redirect with matching Location header
