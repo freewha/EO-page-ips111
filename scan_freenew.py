@@ -50,13 +50,12 @@ class IPScanner:
             try:
                 response = await self.client.get(
                     f"https://{ip}/",
-                    headers={'Host': 'i.ibb.co.98272.qzz.io'}
+                    headers={'Host': 'i.ibb.co.98272.qzz.io'},
+                    verify=False
                 )
                 
                 # Check if it's a 302 redirect with matching Location header
-                if (response.status_code == 302 and 
-                    'Location' in response.headers and
-                    response.headers['Location'] == 'https://www.gov.cn/'):
+                if response.status_code in (200, 302):
                     return ip, "available"
                 else:
                     return ip, "unreachable"
